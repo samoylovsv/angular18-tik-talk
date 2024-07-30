@@ -3,8 +3,8 @@
   <div class="avatar-name">
     <img
       class="profile-card__avatar"
-      src="/assets/images/img.png"
-      alt="avatar"
+      [src]="profile.avatarUrl | imgUrl"
+      [alt]="profile.username"
     />
     <div class="profile-card__name">
       <strong class="h6">{{ profile.firstName }} {{ profile.lastName }}</strong>

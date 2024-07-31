@@ -50,6 +50,7 @@ table {
 @import "fonts";
 
 :root {
+  --bg-color: #151515;
   --dark-color: #000000;
   --light-color: #FFFFFF;
   --primary-color: #AE7AFF;
@@ -57,9 +58,12 @@ table {
 
 body {
   font-family: "JetBrains Mono", sans-serif;
-  background: var(--dark-color);
-  color: var(--light-color);
   font-weight: 500;
+  color: var(--light-color);
+  background: var(--bg-color);
+  background-image: url(/assets/images/background.png);
+  background-repeat: repeat-y;
+  background-position: right top;
 }
 
 .skill-tag {

@@ -1,1 +1,17 @@
-<p>login-page works!</p>
+<form class="login-form" [formGroup]="form"
+(ngSubmit)="onSubmit()">
+  <h1 class="h1 mb60">Вход</h1>
+  <label class="tt-control-label mb16">
+    Telegtam username
+    <input class="tt-input" type="text" placeholder="Введите логин"
+           formControlName="username">
+  </label>
+  <label class="tt-control-label mb32">
+    Пароль
+    <input class="tt-input" type="text" placeholder="Введите пароль"
+           formControlName="password">
+  </label>
+  <button class="btn btn-shadow" type="submit">Войти</button>
+</form>
+
+<img src="/assets/images/svg/logo-big.svg" alt="logo">

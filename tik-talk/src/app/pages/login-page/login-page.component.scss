@@ -5,3 +5,29 @@
   align-items: center;
   margin: 0 5%;
 }
+
+.login-form {
+  width: 440px;
+}
+
+.login-form, .big-logo {
+  place-self: center;
+}
+
+.password-input {
+  position: relative;
+}
+
+.password-eye-btn {
+  background: none;
+  border: none;
+  color: var(--light-color);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 12px;
+  cursor: pointer;
+  &.active {
+    color: var(--primary-color);
+  }
+}

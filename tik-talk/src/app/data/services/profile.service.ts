@@ -18,4 +18,8 @@ export class ProfileService {
     return this.http.get<Profile[]>(`${this.baseApiUrl}account/test_accounts`)
   }
 
+  gerMe(): Observable<Profile> {
+    return this.http.get<Profile>(`${this.baseApiUrl}account/me`)
+  }
+
 }

@@ -4,11 +4,14 @@
   alt="" />
 <nav>
   <ul class="main-menu-list">
-    <li>
+    <li *ngFor="let menuItem of menuItems">
       <button class="menu-item">
-        <svg icon="home"></svg>
-        <span>Моя страница</span>
+        <svg [icon]="menuItem.icon"></svg>
+        <span>{{ menuItem.label }}</span>
       </button>
     </li>
   </ul>
 </nav>
+
+<p class="medium-text mb20">Подписчики</p>
+

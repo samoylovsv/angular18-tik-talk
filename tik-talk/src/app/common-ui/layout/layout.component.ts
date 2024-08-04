@@ -18,8 +18,8 @@ export class LayoutComponent {
 
   ngOnInit(): void {
     console.log('### LayoutComponent > ngOnInit()')
-    this.profileService.gerMe().subscribe((val) => {
-      console.log('val:', val)
-    })
+    // this.profileService.gerMe().subscribe((val) => {
+    //   console.log('val:', val)
+    // })
   }
 }

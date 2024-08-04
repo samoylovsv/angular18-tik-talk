@@ -1,7 +1,8 @@
-import {inject, Injectable} from '@angular/core';
+import {inject, Injectable, signal} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {map, Observable, tap} from "rxjs";
 import {Profile} from "../interfaces/profile.interface";
+import {Pageble} from "../interfaces/pageble.interface";
 
 @Injectable({
   providedIn: 'root'
@@ -12,14 +13,30 @@ export class ProfileService {
 
   baseApiUrl: string = 'https://icherniakov.ru/yt-course/'
 
+  me = signal<Profile | null>(null)
+
   constructor() { }
 
   gerTestAccounts(): Observable<Profile[]> {
     return this.http.get<Profile[]>(`${this.baseApiUrl}account/test_accounts`)
   }
 
+  gerAccount(id: string): Observable<Profile> {
+    return this.http.get<Profile>(`${this.baseApiUrl}account/${id}`)
+  }
+
   gerMe(): Observable<Profile> {
     return this.http.get<Profile>(`${this.baseApiUrl}account/me`)
+      .pipe(
+        tap((res) => this.me.set(res))
+      )
+  }
+
+  getSubscribersShortList(): Observable<Profile[]> {
+    return this.http.get<Pageble<Profile>>(`${this.baseApiUrl}account/subscribers/?page=1&size=3`)
+      .pipe(
+        map((res) => res.items.slice(0, 3))
+      )
   }
 
 }

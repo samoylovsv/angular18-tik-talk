@@ -2,7 +2,7 @@
   class="ml16 mb20"
   src="/assets/images/svg/Logo-Tik-Talk.svg"
   alt="" />
-<nav>
+<nav class="mb20">
   <ul class="main-menu-list">
     <li *ngFor="let menuItem of menuItems">
       <button class="menu-item">
@@ -15,3 +15,29 @@
 
 <p class="medium-text mb20">Подписчики</p>
 
+<!--@if (me()) {-->
+<!--  <app-subscriber-card-->
+<!--   [profile]="me()"-->
+<!--  >-->
+<!--  </app-subscriber-card>-->
+<!--}-->
+
+@for (profile of subscribers$ | async; track profile.id) {
+  <app-subscriber-card
+  [profile]="profile"
+  >
+  </app-subscriber-card>
+}
+
+<div class="mt20 to-subscriber">
+  <a
+    class="to-subscriber-link medium-text"
+  >
+    Все подписчики
+  </a>
+  <svg
+    class="to-subscriber-icon"
+    icon="arrow"
+  >
+  </svg>
+</div>

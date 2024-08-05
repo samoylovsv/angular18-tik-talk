@@ -1,9 +1,25 @@
-<img
-  class="subscriber-avatar"
-  [src]="profile?.avatarUrl | imgUrl"
-  [alt]="profile?.username"
-/>
+@if (profile?.avatarUrl) {
+  <img
+    class="subscriber-avatar"
+    [src]="profile?.avatarUrl | imgUrl"
+    [alt]="profile?.username"
+  />
+} @else {
+  <img
+    class="subscriber-avatar"
+    src="/assets/images/avatar-placeholder.png"
+    alt=""
+  />
+}
 
 <strong class="subtitle">
   {{ profile?.firstName }} {{ profile?.lastName }}
 </strong>
+
+@if (icon) {
+  <svg
+    class="subscriber-icon"
+    [icon]="icon"
+  >
+  </svg>
+}

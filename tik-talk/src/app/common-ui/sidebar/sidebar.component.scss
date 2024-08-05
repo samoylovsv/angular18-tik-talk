@@ -1,6 +1,8 @@
 :host {
   display: block;
   padding: 20px 12px;
+  position: relative;
+  background: var(--hover-bg-color);
 }
 
 .main-menu-list {
@@ -38,15 +40,34 @@
   }
 }
 
-.to-subscriber {
-
+.to-subscribers {
+  display: flex;
+  gap: 18px;
+  align-items: center;
 }
 
 .to-subscriber-link {
-
+  color: var(--primary-color);
+  text-decoration: none;
+  display: grid;
+  grid-template-columns: 1fr 18px;
+  gap: 8px;
 }
 
 .to-subscriber-icon {
+  width: 18px;
+  height: 18px;
+}
 
+.sidebar-footer {
+  //width: 244px;
+  width: calc(100% - 24px);
+  position: absolute;
+  bottom: 20px;
+  background: var(--hover-bg-color);
+  border-radius: 2px;
+  //padding: 4px 16px;
+  //display: grid;
+  //grid-template-columns: 32px 1fr 16px;
 }
 

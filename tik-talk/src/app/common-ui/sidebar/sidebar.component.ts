@@ -22,9 +22,7 @@ import {firstValueFrom} from "rxjs";
 export class SidebarComponent {
   profileService = inject(ProfileService)
 
-  // routerLink = inject(RouterLink) [routerLink]="['/subscribers']"
-
-  // me = this.profileService.me
+  me = this.profileService.me
 
   subscribers$ = this.profileService.getSubscribersShortList()
 
@@ -47,7 +45,7 @@ export class SidebarComponent {
   ]
 
   ngOnInit(): void {
-    // firstValueFrom(this.profileService.gerMe())
+    firstValueFrom(this.profileService.gerMe())
   }
 
 }

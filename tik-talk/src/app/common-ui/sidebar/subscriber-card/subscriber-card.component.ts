@@ -15,5 +15,7 @@ import {SvgIconComponent} from "../../svg-icon/svg-icon.component";
 })
 export class SubscriberCardComponent {
   @Input() profile!: Profile | null
+  @Input() subtitleFlag: boolean | null | undefined = true
   @Input() icon: string | null | undefined
+  @Input() class: string | null | undefined = ''
 }

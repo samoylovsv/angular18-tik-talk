@@ -17,15 +17,15 @@ export class ProfileService {
 
   constructor() { }
 
-  gerTestAccounts(): Observable<Profile[]> {
+  getTestAccounts(): Observable<Profile[]> {
     return this.http.get<Profile[]>(`${this.baseApiUrl}account/test_accounts`)
   }
 
-  gerAccount(id: string): Observable<Profile> {
+  getAccount(id: string): Observable<Profile> {
     return this.http.get<Profile>(`${this.baseApiUrl}account/${id}`)
   }
 
-  gerMe(): Observable<Profile> {
+  getMe(): Observable<Profile> {
     return this.http.get<Profile>(`${this.baseApiUrl}account/me`)
       .pipe(
         tap((res) => this.me.set(res))

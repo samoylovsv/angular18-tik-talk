@@ -45,7 +45,7 @@ export class SidebarComponent {
   ]
 
   ngOnInit(): void {
-    firstValueFrom(this.profileService.gerMe())
+    firstValueFrom(this.profileService.getMe())
   }
 
 }

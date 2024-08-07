@@ -10,9 +10,17 @@
   width: 32px;
   height: 32px;
   border-radius: 50%;
+  &.profile-header {
+    width: 112px;
+    height: 112px;
+    border-radius: 50%;
+  }
 }
+
+
 
 .subscriber-icon {
   width: 18px;
   height: 18px;
 }
+

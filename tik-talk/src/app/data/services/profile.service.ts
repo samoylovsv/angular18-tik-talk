@@ -32,10 +32,11 @@ export class ProfileService {
       )
   }
 
-  getSubscribersShortList(): Observable<Profile[]> {
-    return this.http.get<Pageble<Profile>>(`${this.baseApiUrl}account/subscribers/?page=1&size=3`)
+  getSubscribersShortList(subsAmount: number = 3): Observable<Profile[]> {
+    return this.http.get<Pageble<Profile>>(`${this.baseApiUrl}account/subscribers/?page=1&size=${subsAmount}`)
       .pipe(
-        map((res) => res.items.slice(0, 3))
+        // map((res) => res.items.slice(0, subsAmount))
+        map((res) => res.items)
       )
   }
 

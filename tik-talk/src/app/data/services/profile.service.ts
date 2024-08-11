@@ -3,6 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import {map, Observable, tap} from "rxjs";
 import {Profile} from "../interfaces/profile.interface";
 import {Pageble} from "../interfaces/pageble.interface";
+import {AbstractControl, ValidationErrors, ɵElement, ɵFormGroupValue, ɵTypedOrUntyped} from "@angular/forms";
 
 @Injectable({
   providedIn: 'root'
@@ -38,6 +39,41 @@ export class ProfileService {
         // map((res) => res.items.slice(0, subsAmount))
         map((res) => res.items)
       )
+  }
+
+  patchProfile(profile: ɵTypedOrUntyped<{
+    [K in keyof {
+      firstName: (null | ((control: AbstractControl) => (ValidationErrors | null)))[];
+      lastName: (null | ((control: AbstractControl) => (ValidationErrors | null)))[];
+      stack: any[];
+      description: any[];
+      username: ({ disabled: boolean; value: null } | ((control: AbstractControl) => (ValidationErrors | null)))[]
+    }]: ɵElement<{
+      firstName: (null | ((control: AbstractControl) => (ValidationErrors | null)))[];
+      lastName: (null | ((control: AbstractControl) => (ValidationErrors | null)))[];
+      stack: any[];
+      description: any[];
+      username: ({ disabled: boolean; value: null } | ((control: AbstractControl) => (ValidationErrors | null)))[]
+    }[K], null>
+  }, ɵFormGroupValue<{
+    [K in keyof {
+      firstName: (null | ((control: AbstractControl) => (ValidationErrors | null)))[];
+      lastName: (null | ((control: AbstractControl) => (ValidationErrors | null)))[];
+      stack: any[];
+      description: any[];
+      username: ({ disabled: boolean; value: null } | ((control: AbstractControl) => (ValidationErrors | null)))[]
+    }]: ɵElement<{
+      firstName: (null | ((control: AbstractControl) => (ValidationErrors | null)))[];
+      lastName: (null | ((control: AbstractControl) => (ValidationErrors | null)))[];
+      stack: any[];
+      description: any[];
+      username: ({ disabled: boolean; value: null } | ((control: AbstractControl) => (ValidationErrors | null)))[]
+    }[K], null>
+  }>, any>): Observable<Profile> {
+    return this.http.patch<Profile>(
+      `${this.baseApiUrl}account/me`,
+      profile
+    )
   }
 
 }

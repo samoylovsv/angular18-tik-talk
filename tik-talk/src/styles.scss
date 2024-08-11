@@ -56,7 +56,8 @@ table {
   --light-color: #FFFFFF;
   --primary-color: #AE7AFF;
   --gray-color: #5F646D;
-  --hover-bg-color: #161616
+  --hover-bg-color: #161616;
+  --light-transparent-color: rgba(255,255, 255, 0.75);
 }
 
 body {
@@ -171,4 +172,39 @@ body {
   line-height: 21px;
   font-family: "JetBrains Mono", sans-serif;
   box-sizing: border-box;
+}
+
+.tt-form-label {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.tt-form-label__text {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  font-style: normal;
+  color: var(--light-transparent-color);
+}
+
+.tt-form-input {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 21px;
+  font-style: normal;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--light-color);
+  height: 33px;
+  color: var(--light-color);
+
+  &:focus-visible {
+    outline: 1px solid var(--primary-color);
+  }
+}
+
+.tt-textarea {
+  height: 84px;
+  resize: none;
 }

@@ -18,6 +18,10 @@
   padding: 16px;
   display: grid;
   place-content: center;
+
+  &.fileover {
+    border: 1px dashed var(--primary-color);
+  }
 }
 
 .dropzone-content {

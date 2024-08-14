@@ -1,11 +1,15 @@
 import {Component, signal} from '@angular/core';
 import {SvgIconComponent} from "../../../common-ui/svg-icon/svg-icon.component";
+import {DndDirective} from "../../../common-ui/directives/dnd.directive";
+import {FormsModule} from "@angular/forms";
 
 @Component({
   selector: 'app-avatar-upload',
   standalone: true,
   imports: [
-    SvgIconComponent
+    SvgIconComponent,
+    DndDirective,
+    FormsModule
   ],
   templateUrl: './avatar-upload.component.html',
   styleUrl: './avatar-upload.component.scss'
@@ -14,10 +18,19 @@ export class AvatarUploadComponent {
 
   preview = signal<string>('/assets/images/avatar-placeholder.png')
 
+  avatar = null
+
   fileBrowserHandler(event: Event): void {
     console.log('# AvatarUploadComponent -> fileBrowserHandler() -> event:', event)
     const file = (event.target as HTMLInputElement)?.files?.[0]
+    this.processedFile(file)
+  }
 
+  onFileDropped(file: File): void {
+    this.processedFile(file)
+  }
+
+  processedFile(file: File | null | undefined) {
     if (!file || !file.type.match('image')) {
       return
     }
@@ -27,8 +40,7 @@ export class AvatarUploadComponent {
     reader.onload = event => {
       this.preview.set(event.target?.result?.toString() ?? '')
     }
-    
-    reader.readAsDataURL(file)
 
+    reader.readAsDataURL(file)
   }
 }

@@ -4,9 +4,11 @@
   alt=""
 />
 <div
+  dnd
   class="dropzone"
   tabindex="0"
   (keyup.enter)="fileDrop.click()"
+  (fileDropped)="onFileDropped($event)"
 >
   <div class="dropzone-content">
     <svg icon="upload"></svg>
@@ -23,5 +25,6 @@
     type="file"
     #fileDrop
     (change)="fileBrowserHandler($event)"
+    [(ngModel)]="avatar"
   />
 </div>

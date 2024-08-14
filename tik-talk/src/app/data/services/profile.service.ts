@@ -76,4 +76,13 @@ export class ProfileService {
     )
   }
 
+  uploadAvatar(file: File): Observable<Profile> {
+    const fd = new FormData()
+    fd.append('image', file)
+    return this.http.post<Profile>(
+      `${this.baseApiUrl}account/upload_image`,
+      fd
+    )
+  }
+
 }

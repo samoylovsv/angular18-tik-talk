@@ -18,7 +18,7 @@ export class AvatarUploadComponent {
 
   preview = signal<string>('/assets/images/avatar-placeholder.png')
 
-  avatar = null
+  avatar: File | null = null
 
   fileBrowserHandler(event: Event): void {
     console.log('# AvatarUploadComponent -> fileBrowserHandler() -> event:', event)
@@ -42,5 +42,6 @@ export class AvatarUploadComponent {
     }
 
     reader.readAsDataURL(file)
+    this.avatar = file
   }
 }

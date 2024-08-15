@@ -3,7 +3,7 @@ import {SvgIconComponent} from "../svg-icon/svg-icon.component";
 import {AsyncPipe, NgForOf} from "@angular/common";
 import {SubscriberCardComponent} from "./subscriber-card/subscriber-card.component";
 import {ProfileService} from "../../data/services/profile.service";
-import {RouterLink} from "@angular/router";
+import {RouterLink, RouterLinkActive} from "@angular/router";
 import {firstValueFrom} from "rxjs";
 
 @Component({
@@ -14,7 +14,8 @@ import {firstValueFrom} from "rxjs";
     NgForOf,
     SubscriberCardComponent,
     RouterLink,
-    AsyncPipe
+    AsyncPipe,
+    RouterLinkActive
   ],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.scss'

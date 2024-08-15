@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 32px 1fr 16px;
   grid-gap: 12px;
-  padding: 8px 0;
+  padding: 12px;
   align-items: center;
 }
 
@@ -17,10 +17,8 @@
   }
 }
 
-
-
 .subscriber-icon {
-  width: 18px;
-  height: 18px;
+  width: 14px;
+  height: 14px;
 }
 

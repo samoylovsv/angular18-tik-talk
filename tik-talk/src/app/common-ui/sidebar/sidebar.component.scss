@@ -2,7 +2,7 @@
   display: block;
   padding: 20px 12px;
   position: relative;
-  background: var(--hover-bg-color);
+  background: var(--dark-color);
 }
 
 .main-menu-list {
@@ -28,7 +28,9 @@
   text-align: left;
   border-radius: 2px;
   text-decoration: none;
+  width: calc(100% - 24px);
 
+  &.active,
   &:hover,
   &:focus-visible {
     background: var(--hover-bg-color);

@@ -1,0 +1,33 @@
+<form
+  class="profile-search-form"
+  [formGroup]="searchForm"
+>
+
+  <label class="tt-form-label">
+    <span class="tt-form-label__text">Имя</span>
+    <input
+      class="tt-form-input"
+      type="text"
+      formControlName="firstName"
+    />
+  </label>
+
+  <label class="tt-form-label">
+    <span class="tt-form-label__text">Фамилия</span>
+    <input
+      class="tt-form-input"
+      type="text"
+      formControlName="lastName"
+    />
+  </label>
+
+  <label class="tt-form-label">
+    <span class="tt-form-label__text">Навыки</span>
+    <input
+      class="tt-form-input"
+      type="text"
+      formControlName="stack"
+    />
+  </label>
+
+</form>
